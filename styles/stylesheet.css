@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.container {
+  font-family: lobster, cursive;
+  background: linear-gradient(yellow,red);
+  background-size: cover;
+}
+
+p {
+  font-size: 2rem;
+  text-align: center;
+}
+

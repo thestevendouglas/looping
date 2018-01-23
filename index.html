@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <title>Loop the Loop</title>
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5rem;
+    }
+    .red {
+      color: red;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/stylesheet.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+<body class="container">
+  <h1 class="col-sm-12">Weeeeeeeeeeee!</h1>
+
+  <img id="roller" src="#" alt="roller coaster" class="col-lg-12">
+  
+  <p class="col-sm-12 mt-3 text-white">Omg I lost my freakin' cotton candy!</p>
+
+  <script type="text/javascript">
+   
+    var imageSources = [
+      "http://images.mentalfloss.com/sites/default/files/styles/width-constrained-728/public/503373-iStock-186293315.jpg",
+      "https://media4.s-nbcnews.com/j/newscms/2017_31/1270023/wonder-woman-roller-coaster-today-inline-170803_7e4934000dfd84cdbb6b2f4900a03988.today-inline-large.jpg",
+      "http://cdn.cnn.com/cnnnext/dam/assets/160520171710-07-stormchaser-jpg-best-coasters-super-169.jpg",
+      "https://thediabeticjourney.com/wp-content/uploads/2016/08/diabetes-rollercoaster.png"
+    ]
+
+    // select the <img> tag with id of "roller" from the HTML
+    var theImg = document.querySelector("img#roller");
+
+    // set the src attribute of the img to be the first element in source array
+    theImg.setAttribute("src", imageSources[0]);
+
+    // TODO: set howMany variable to a value user inputs
+    var howMany = prompt("How many roller coaster rides would you like to go on?") 
+      if (howMany > 0) {
+        alert("Ok let's go!")
+      }else {
+        alert("Don't be such a wuss!")
+      }
+        
+
+    //the variable counter is each ride on a rollercoaster
+    var counter = 1;
+    // TODO: execute this loop the number of times user requested
+    while(counter <= howMany){
+      console.log("Wheee! This is the ", counter, " time we've done this!");
+      counter = counter + 1;
+      // find value of counter modulo length of sources array-
+      // this value will increase by one on each iteration of the loop,
+      // so image source will cycle through all possible images
+      var theOne = counter % imageSources.length;
+      // reset the src of the image to the next member of the sources array
+      theImg.setAttribute("src", imageSources[theOne]);
+      
+      // TODO: increment the counter
+    }
+      document.querySelector("h1").style.color = "red";
+
+    // EXTRA CHALLENGES:
+    // 1. Using JS, add a class of "red" to the <h1>.
+    //    This only needs to be done once, so code should be outside loop.
+    // 2. Execute the loop only half as many times, or twice as many times, as the user requested.
+    // 3. Add a pause to each loop, so user can see each image as it cycles past.
+    //    This is a difficult one!
+    
+    //   Listed below is the answer to doubling the counter. I couldn't figure out the pause!! 
+    //   while (counter <= howMany * 2){
+    //      console.log("Double time")
+    //      counter = counter+1;
+    //    }
+
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+</body>
+</html>
